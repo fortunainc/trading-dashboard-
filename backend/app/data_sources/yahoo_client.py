@@ -99,7 +99,7 @@ class YahooClient:
             hist = ticker.history(period=period, interval=interval)
             
             if len(hist) == 0:
-                logger.error(fNo OHLCV data found for {symbol}")
+                logger.error(f"No OHLCV data found for {symbol}")
                 return None
             
             candles = []

@@ -9,7 +9,7 @@ import logging
 from app.config import Settings
 from app.failure_handler import FailureHandler
 from app.data_sources.tradier_client import TradierClient
-from app.data_sources.yahoo_client import YahooFinanceClient
+from app.data_sources.yahoo_client import YahooClient
 from app.data_sources.alpha_vantage_client import AlphaVantageClient
 from app.data_sources.finnhub_client import FinnhubClient
 from app.data_sources.data_normalizer import DataNormalizer, NormalizedDataResult
@@ -41,7 +41,7 @@ class DataService:
         
         # Initialize data source clients
         self.tradier = TradierClient(settings.TRADIER_API_KEY) if settings.TRADIER_API_KEY else None
-        self.yahoo = YahooFinanceClient()
+        self.yahoo = YahooClient()
         self.alpha_vantage = AlphaVantageClient(settings.ALPHA_VANTAGE_API_KEY) if settings.ALPHA_VANTAGE_API_KEY else None
         self.finnhub = FinnhubClient(settings.FINNHUB_API_KEY) if settings.FINNHUB_API_KEY else None
         

@@ -16,13 +16,12 @@ from app.models.price_data import (
     LiveData,
     OpeningRange,
     VWAP,
-    PricePoint,
     SessionType
 )
 from app.models.ohlcv import OHLCVCandle, OHLCVSeries
 
 from app.data_sources.tradier_client import TradierClient
-from app.data_sources.yahoo_client import YahooFinanceClient
+from app.data_sources.yahoo_client import YahooClient
 from app.data_sources.alpha_vantage_client import AlphaVantageClient
 from app.data_sources.finnhub_client import FinnhubClient
 
@@ -45,7 +44,7 @@ class DataNormalizer:
     def __init__(
         self,
         tradier_client: Optional[TradierClient] = None,
-        yahoo_client: Optional[YahooFinanceClient] = None,
+        yahoo_client: Optional[YahooClient] = None,
         alpha_vantage_client: Optional[AlphaVantageClient] = None,
         finnhub_client: Optional[FinnhubClient] = None
     ):
